@@ -1,0 +1,22 @@
+
+{
+  "name": "kityminder-test",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "beth <zhangbaige@innobuddy.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/BETH-zhang/kityminder-test",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "kity": "^2.0.5",
+    "kityminder-core": "^1.4.33"
+  }
+}

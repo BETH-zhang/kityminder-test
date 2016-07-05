@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>我的2015</title>
+    <link rel="stylesheet" href="./kityminder.css" rel="stylesheet">
+    <link rel="stylesheet" href="./index.css" rel="stylesheet">
+    <script type="text/javascript" src="./kity.min.js"></script>
+    <script type="text/javascript" src="./kityminder.core.min.js"></script>
+</head>
+
+<body>
+    <h1>2015</h1>
+    <script id="minder-view" type="application/kityminder" minder-data-type="json">
+        {
+            "root": {
+                "data": {
+                    "text": "前端优化"
+                },
+                "children": [{
+                        "data": {
+                            "text": "新闻",
+                            "color": "#060"
+                        },
+                        "children": [{
+                            "data": { "text": "你好" },
+                            "children": [{
+                                "data": { "text": "你好" },
+                                "children": [{
+                                    "data": { "text": "你好" },
+                                    "children": [{
+                                        "data": { "text": "你好" }
+                                    }]
+                                }]
+                            }]
+                        }]
+                    },
+                    { "data": { "text": "网页", "priority": 1 } },
+                    { "data": { "text": "贴吧", "priority": 2 } },
+                    { "data": { "text": "知道", "priority": 2 } },
+                    { "data": { "text": "音乐", "priority": 3 } },
+                    { "data": { "text": "图片", "priority": 3 } },
+                    { "data": { "text": "视频", "priority": 3 } },
+                    { "data": { "text": "地图", "priority": 3 } },
+                    { "data": { "text": "百科", "priority": 3 } },
+                    { "data": { "text": "更多", "hyperlink": "http://www.baidu.com/more" } }
+                ]
+            }
+        }
+    </script>
+</body>
+<script type="text/javascript">
+    var km = window.km = new kityminder.Minder();
+    km.setup('#minder-view');
+</script>
+
+</html>
