@@ -24,19 +24,169 @@
             "imageSize": { "width": 120, "height": 120 }
           },
           "children": [{
-            "data": {"text": "性能优化的基础认知"}
+            "data": {"text": "性能优化的基础认知","priority":1,"note":""},
+            "children": [{
+              "data": {"text": "访问站点的时候，做了什么","note":"例如：百度，facebook，twitter"}
+            }, {
+              "data": {"text": "通用的不一定合适"},
+              "children": [{
+                "data": {"text": "业内通用方案"}
+              }, {
+                "data": {"text": "对于我们通用方案不好的原因"}
+              }]
+            }, {
+              "data": {"text": "我们要优化什么"}
+            }, {
+              "data": {"text": "时间的定义"},
+              "children": [{
+                "data": {"text": "白屏时间"}
+              }, {
+                "data": {"text": "首屏时间"}
+              }, {
+                "data": {"text": "可操时间"}
+              }]
+            }]
           }, {
-            "data": {
-              "text": "加载顺序"
-            }
+            "data": {"text": "加载顺序","priority":3,"note":""}
           }, {
-            "data": {"text": "本地存储"}
+            "data": {"text": "本地存储","priority":4,"note":""},
+            "children": [{
+              "data": {"text": "常用本地存储api"},
+              "children": [{
+                "data": {"text": "sessionStorage单次会话存储"}
+              }, {
+                "data": {"text": "userData(只有IE支持)"}
+              }, {
+                "data": {"text": "localStorage多次回话存储（52M大小，写满时浏览器运行速度降低）"}
+              }, {
+                "data": {"text": "cookie"}
+              }, {
+                "data": {"text": "manifest离线文件"}
+              }, {
+                "data": {"text": "openDatabase（目前只有chrome支持）"}
+              }]
+            }, {
+              "data": {"text": "优化方案敲定"},
+              "children": [{
+                "data": {"text": "资源存储方式"}
+              }, {
+                "data": {"text": "资源更新方式"}
+              }, {
+                "data": {"text": "资源列表维护"}
+              }]
+            }]
           }, {
-            "data": {"text": "网络环境"}
+            "data": {"text": "网络环境","priority":2,"note":""},
+            "children": [{
+              "data": {"text": "网络环境的不可控性"},
+              "children": [{
+                "data": {"text": "中国移动"}
+              }, {
+                "data": {"text": "中国联通"}
+              }, {
+                "data": {"text": "中国电信"}
+              }, {
+                "data": {"text": "中国网通"}
+              }, {
+                "data": {"text": "中国卫通"}
+              }, {
+                "data": {"text": "中国铁通"}
+              }]
+            }, {
+              "data": {"text": "网络环境的多样性"},
+              "children": [{
+                "data": {"text": "GPRS(50KB/S,500ms RTT往返延时)"}
+              }, {
+                "data": {"text": "2G", "note": "250KB/S,300ms RTT往返延时)--regular;450KB/S,150ms RTT往返延时)--good"}
+              }, {
+                "data": {"text": "3G", "note": "750KB/S,100ms RTT往返延时)--regular;1M/S,40ms RTT往返延时)--good"}
+              }, {
+                "data": {"text": "4G","note": "4M/S,20ms RTT往返延时)"}
+              }, {
+                "data": {"text": "WIFI", "note": "30M/S,2ms RTT往返延时)"}
+              }, {
+                "data": {"text": "DSL(数字用户线路)，是以电话线为传输介质的传输技术组合。", "note": "2M/S,5ms RTT往返延时)"}
+              }]
+            }, {
+              "data": {"text": "移动常用解决方案"},
+              "children": [{
+                "data": {"text": "faker请求，通过渲染html和css就可以看出整个页面"}
+              }, {
+                "data": {"text": "框架js－css，各个业务团队js－css"}
+              }, {
+                "data": {"text": "限定每个业务团队"}
+              }, {
+                "data": {"text": "减少第三方库的体积jQuery库的话，可以考虑换成zepto"}
+              }, {
+                "data": {"text": "图片处理，先用默认图占位，然后置换模糊图，最后高清图提高用户体验"}
+              }, {
+                "data": {"text": "lazyload先首屏加载"}
+              }, {
+                "data": {"text": "Iscroll滚屏，目前时IScroll5"}
+              }, {
+                "data": {"text": "每次DOM选择都要计算"}
+              }, {
+                "data": {"text": "每次length都要计算，用一个变量保存这个值"}
+              }, {
+                "data": {"text": "ID选择器是最快的"}
+              }, {
+                "data": {"text": "使用touchstart，touchend代替click，因快影响速度快。但应注意Touch相应过快，易引发误操作"}
+              }, {
+                "data": {"text": "Viewport可以加速页面的渲染"}
+              }, {
+                "data": {"text": "合理使用requestAnimationFrame动画代替setTimeout"}
+              }]
+            }, {
+              "data": {"text": "PC常用解决方案"}
+            }, {
+              "data": {"text": "Http协议"},
+              "children": [{
+                "data": {"text": "http方法"},
+                "children": [{
+                  "data": {"text": "GET:从服务器获取一份文档"}
+                }, {
+                  "data": {"text": "POST:只从服务器获取文档首部"}
+                }, {
+                  "data": {"text": "HEAD:向服务器发送需要处理的数据"}
+                }, {
+                  "data": {"text": "PUT:将请求的主题部分存储在服务器上"}
+                }, {
+                  "data": {"text": "OPTION:决定可以再服务器上执行哪些方法"}
+                }, {
+                  "data": {"text": "TRACE:对镜过的代理服务器送到服务器上去的报文进行追踪"}
+                }, {
+                  "data": {"text": "CONNECT:这个方法的作用就是把服务器作为跳板，让服务器代替用户去访问其他网页"}
+                }, {
+                  "data": {"text": "DELETE:从服务器上删除一份文件"}
+                }]
+              }, {
+                "data": {"text": "http常用code码"},
+                "children": [{
+                  "data": {"text": "100-199(100~101)信息提示"}
+                }, {
+                  "data": {"text": "200-299(200~206)成功"}
+                }, {
+                  "data": {"text": "300-399(300~305)重定向"}
+                }, {
+                  "data": {"text": "400-499(400~415)客户端服错误"}
+                }, {
+                  "data": {"text": "500-599(500~505)服务器错误"}
+                }]
+              }]
+            }, {
+              "data": {"text": "静态资源就近访问CDN，成本，带宽"},
+              "children": [{
+                "data": {"text": "DNS起源"}
+              }, {
+                "data": {"text": "DNS报文结构"}
+              }, {
+                "data": {"text": "域名系统中的动态更新 (DNS UPDATE)触发条件："}
+              }]
+            }]
           }, {
-            "data": {"text": "SDK"}
+            "data": {"text": "SDK","background":"#73a1bf","color":"#fff","note":""}
           }, {
-            "data": {"text": "如何评定优化结果和收益"}
+            "data": {"text": "如何评定优化结果和收益","priority":5,"note":""}
           }]
         }
       }
