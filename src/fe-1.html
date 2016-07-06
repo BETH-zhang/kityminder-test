@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>前端性能优化</title>
+    <link rel="stylesheet" href="./kityminder.css" rel="stylesheet">
+    <link rel="stylesheet" href="./index.css" rel="stylesheet">
+    <link rel="stylesheet" href="../bower_components/send-alert/dist/alert.css"/>
+    <script src="../bower_components/send-alert/dist/sendAlert.min.js"></script>
+    <script type="text/javascript" src="./kity.min.js"></script>
+    <script type="text/javascript" src="./kityminder.core.min.js"></script>
+</head>
+
+<body>
+    <h1>前端性能优化</h1>
+    <script id="minder-view" type="application/kityminder" minder-data-type="json">
+      {
+        "root": {
+          "data": {
+            "text": "前端性能优化",
+            "image": "./getheadimg.jpeg",
+            "imageTitle": "BETH",
+            "imageSize": { "width": 120, "height": 120 }
+          },
+          "children": [{
+            "data": {"text": "性能优化的基础认知"}
+          }, {
+            "data": {
+              "text": "加载顺序"
+            }
+          }, {
+            "data": {"text": "本地存储"}
+          }, {
+            "data": {"text": "网络环境"}
+          }, {
+            "data": {"text": "SDK"}
+          }, {
+            "data": {"text": "如何评定优化结果和收益"}
+          }]
+        }
+      }
+    </script>
+</body>
+<script type="text/javascript">
+    var km = window.km = new kityminder.Minder();
+    km.setup('#minder-view');
+    km.on('selectionchange', function() {
+        var node = km.getSelectedNode();
+        if (node) {
+            var note = node.getData().note;
+            if(note){
+                seal(note);
+            }
+        }
+    });
+</script>
+
+</html>
