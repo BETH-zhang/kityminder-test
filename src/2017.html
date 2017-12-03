@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>我的2016</title>
+    <link rel="stylesheet" href="./kityminder.css" rel="stylesheet">
+    <link rel="stylesheet" href="./index.css" rel="stylesheet">
+    <link rel="stylesheet" href="../bower_components/send-alert/dist/alert.css"/>
+    <script src="../bower_components/send-alert/dist/sendAlert.min.js"></script>
+    <script type="text/javascript" src="./kity.min.js"></script>
+    <script type="text/javascript" src="./kityminder.core.min.js"></script>
+</head>
+
+<body>
+    <h1>我的2017年马上就要结束了！</h1>
+    <a href="./2015.html" class="go">我的2015</a>
+    <a href="./2016-1.html" class="go">我的2016</a>
+    <script id="minder-view" type="application/kityminder" minder-data-type="json">
+        {
+            "root": {
+                "data": {
+                    "text": "2017工作总结",
+                    "image": "./getheadimg.jpeg",
+                    "imageSize": { "width": 120, "height": 120 }
+                },
+                "children": [{
+                        "data": {
+                            "text": "参与项目",
+                            "note": "逐步形成了自己的风格和习惯，算是付出和成效成正比的一年"
+                        },
+                        "children": [{
+                            "data": {"text": "USKid学生端","hyperlink": "https://www.uskid.com/","note":"相关技术人员：小野，百鸽，智勇，文华" }
+                        }, {
+                            "data": {"text": "USKid教师端","hyperlink": "https://www.uskid.com/t","note":"相关技术人员：小野，百鸽，智勇，文华" }
+                        }, {
+                            "data": {"text": "USKid新后台","hyperlink": "https://www.uskid.com/admin","note":"相关技术人员：后端同事，百鸽，文华，艳超，安雷" }
+                        }, {
+                            "data": {"text": "Ares线下系统","hyperlink": "https://www.uskid.com/ares","note":"相关技术人员：后端同事，百鸽，文华，艳超" }
+                        }, {
+                            "data": {"text": "USKid site","hyperlink": "","note":"相关技术人员：敬云，百鸽，星星" }
+                        }]
+                    },
+                    {
+                      "data": {"text": "项目重构"},
+                      "children": [{
+                        "data": {"text": "后台重构"}
+                      }, {
+                        "data": {"text": "预约模块重构"}
+                      }, {
+                        "data": {"text": "项目结构重构"}
+                      }, {
+                        "data": {"text": "Template2.0重构"}
+                      }]
+                    },
+                    {
+                      "data": {"text": "项目文档"},
+                      "children": [{
+                        "data": {"text": "权限文档"}
+                      }, {
+                        "data": {"text": "预约文档"}
+                      }, {
+                        "data": {"text": "中英文翻译文档"}
+                      }, {
+                        "data": {"text": "接口文档"}
+                      }]
+                    },
+                    {
+                      "data": {"text": "个人成长"},
+                      "children": [{
+                        "data": {"text": "前端项目的整体把控"}
+                      }, {
+                        "data": {"text": "公共模块抽离"}
+                      }, {
+                        "data": {"text": "完善前端工作流"}
+                      }, {
+                        "data": {"text": "及时处理突发问题"}
+                      }]
+                    }
+                ]
+            }
+        }
+    </script>
+</body>
+<script type="text/javascript">
+    var km = window.km = new kityminder.Minder();
+    km.setup('#minder-view');
+    km.on('selectionchange', function() {
+        var node = km.getSelectedNode();
+        if (node) {
+            var note = node.getData().note;
+            if(note){
+                seal(note);
+            }
+        }
+    });
+
+    // { 
+    //                     "data": { 
+    //                         "text": "技术积累"
+    //                     },
+    //                     "children": [{
+    //                         "data": {"text": "Git+GitLab+git-flow+docker"}
+    //                     }, {
+    //                         "data": {"text": "React+Redux+Redux-saga+Webpack+Immutable+lodash"}
+    //                     }, {
+    //                         "data": {"text": "React+Flux+gulp"}
+    //                     }, {
+    //                         "data": {"text": "React+Redux+Webpack"}
+    //                     }, {
+    //                         "data": {"text": "Django+Js"}
+    //                     }, {
+    //                         "data": {"text": "Ejs+JQuery"}
+    //                     }]
+    //                 }
+</script>
+
+</html>
